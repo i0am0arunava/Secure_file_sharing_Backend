@@ -1,0 +1,9 @@
+flask
+pymongo
+python-dotenv
+flask-cors
+resend
+cryptography
+dnspython
+email-validator
+pytest
