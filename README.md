@@ -1,4 +1,10 @@
 # 🔐 Secure File Sharing Backend
+    🧰 Tech Stack
+
+1. **Python**
+2. **Flask**
+3. **MongoDB (Atlas)**
+4. **Docker**
 
 This is a secure file-sharing system backend built using Flask and MongoDB, supporting role-based access for Ops and Client users.
 
@@ -59,7 +65,7 @@ http://localhost:5000/
 
 #### 👤 Client Endpoints
 - `POST /client/signup` - Sign up a Client user
-- `POST http://localhost:5000/client/verify`- Verify Email
+- `POST http://localhost:5000/client/verify/<token>`- Verify Email
 - `POST /client/login` - Login for Client user
 - `POST /client/files` - List uploaded files (requires auth)
 - `POST /client/request-download` - Request secure download link
