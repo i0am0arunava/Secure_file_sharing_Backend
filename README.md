@@ -2,6 +2,14 @@
 
 This is a secure file-sharing system backend built using Flask and MongoDB, supporting role-based access for Ops and Client users.
 
+## 📬 Postman Collection
+
+You can import the Postman dump file to test all API endpoints easily.
+
+
+> 📁 **Postman Dump File:**>
+> [https://drive.google.com/file/d/1yAR88rk222WybUoJoqMGIsh3QSZ-R9T_/view?usp=sharing](https://drive.google.com/file/d/1yAR88rk222WybUoJoqMGIsh3QSZ-R9T_/view?usp=sharing)
+
 ---
 
 ## Installation
