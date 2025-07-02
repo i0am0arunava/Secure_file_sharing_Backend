@@ -214,7 +214,7 @@ def list_uploaded_files():
     email = data.get("email")
     password = hash_password(data.get("password"))
 
-    # Validate client user
+   
     user = users_collection.find_one({
         "email": email,
         "password": password,
@@ -225,10 +225,10 @@ def list_uploaded_files():
     if not user:
         return jsonify({"msg": "Invalid or unverified client"}), 403
 
-    # List all uploaded files with filename and ID
-    files = files_collection.find({}, {"filename": 1})  # _id is included by default
+   
+    files = files_collection.find({}, {"filename": 1}) 
 
-    # Convert ObjectId to string for JSON serialization
+  
     file_list = [{"id": str(file["_id"]), "name": file["filename"]} for file in files]
 
     return jsonify({"files": file_list})
@@ -276,11 +276,11 @@ def generate_download_url():
 @user_bp.route('/client/download/<token>', methods=['GET'])
 def client_download(token):
     try:
-        # Decrypt token to get email and filename
+      
         payload = fernet.decrypt(token.encode()).decode()
         email, file_doc = payload.split("|")
       
-        # Validate if it's a verified client
+      
         user = users_collection.find_one({
             "email": email,
             "is_ops": False,
@@ -290,7 +290,7 @@ def client_download(token):
         if not user:
             return jsonify({"msg": "Unauthorized or invalid client"}), 403
 
-        # Build file path
+     
         upload_dir = os.path.join(os.getcwd(), 'uploads')
         full_path = os.path.join(upload_dir, file_doc)
 
